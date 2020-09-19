@@ -1,0 +1,6 @@
+framework module Persistency {
+  umbrella header "Persistency-umbrella.h"
+
+  export *
+  module * { export * }
+}

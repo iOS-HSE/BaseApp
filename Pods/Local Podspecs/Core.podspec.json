@@ -1,0 +1,29 @@
+{
+  "name": "Core",
+  "version": "1.0.0",
+  "summary": "Module for IBAMobileBank. Conatins helpers that all modules can use",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": {
+    "Laszlo Teveli": "laszlo.teveli@incepteam.com"
+  },
+  "homepage": "https://github.com/iba-dit/ibam-ios-app",
+  "source": {
+    "path": "."
+  },
+  "source_files": "Sources/**/*.swift",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  },
+  "testspecs": [
+    {
+      "name": "Tests",
+      "test_type": "unit",
+      "source_files": "Tests/**/*.swift"
+    }
+  ]
+}
