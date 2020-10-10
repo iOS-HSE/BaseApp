@@ -19,7 +19,7 @@ class NewMoviesVC: GenericTableVC<NewMoviesCell, Movie> {
     
     func fetch() {
         showIndicator()
-        NetworkManager.shared.getNewMovies(page: 0) { movies, error in
+        NetworkManager.shared.getNewMovies(page: 1) { movies, error in
             DispatchQueue.main.async {
                 if error != nil {
                     self.createAlert(message: error ?? "")

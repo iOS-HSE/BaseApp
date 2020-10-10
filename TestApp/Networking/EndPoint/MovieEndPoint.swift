@@ -62,7 +62,7 @@ extension MovieAPI: EndPointType {
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .url,
                                       urlParameters: ["page": page,
-                                                      "api_key": ""])
+                                                      "api_key": NetworkManager.MovieAPIKey])
         default:
             return .request
         }
