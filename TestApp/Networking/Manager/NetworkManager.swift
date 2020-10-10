@@ -26,7 +26,7 @@ enum Result<String> {
 struct NetworkManager {
     
     static let shared = NetworkManager()
-    static let environment = NetworkEnvironment.prod
+    static let environment: NetworkEnvironment = .prod
     static let MovieAPIKey = "2fd452d03ad172264c5bb0a05612db08"
     let router = Router<MovieAPI>()
     

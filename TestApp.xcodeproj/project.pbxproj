@@ -30,6 +30,7 @@
 		A597B78B2531E8D0000578C5 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A597B78A2531E8D0000578C5 /* MovieModel.swift */; };
 		A597B7912531ED08000578C5 /* NewMoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A597B7902531ED08000578C5 /* NewMoviesVC.swift */; };
 		A597B7952531ED29000578C5 /* NewMoviesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A597B7942531ED29000578C5 /* NewMoviesCell.swift */; };
+		A597B7992531F125000578C5 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A597B7982531F125000578C5 /* NetworkLogger.swift */; };
 		A5E417802515453900FBD374 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E4177F2515453900FBD374 /* Dependencies.swift */; };
 		A5E41782251546AA00FBD374 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E41781251546AA00FBD374 /* Navigator.swift */; };
 		A5E417842515475600FBD374 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E417832515475600FBD374 /* Segue.swift */; };
@@ -72,6 +73,7 @@
 		A597B78A2531E8D0000578C5 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		A597B7902531ED08000578C5 /* NewMoviesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMoviesVC.swift; sourceTree = "<group>"; };
 		A597B7942531ED29000578C5 /* NewMoviesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMoviesCell.swift; sourceTree = "<group>"; };
+		A597B7982531F125000578C5 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		A5E4177F2515453900FBD374 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		A5E41781251546AA00FBD374 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		A5E417832515475600FBD374 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				A597B7662531D65B000578C5 /* NetworkRouter.swift */,
 				A597B7692531D791000578C5 /* Router.swift */,
 				A597B76C2531D901000578C5 /* HTTPMethod.swift */,
+				A597B7982531F125000578C5 /* NetworkLogger.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				A5E417802515453900FBD374 /* Dependencies.swift in Sources */,
 				A597B7672531D65B000578C5 /* NetworkRouter.swift in Sources */,
 				A5E417962515D06600FBD374 /* ListVC.swift in Sources */,
+				A597B7992531F125000578C5 /* NetworkLogger.swift in Sources */,
 				A597B75E2531D14A000578C5 /* ParameterEncoding.swift in Sources */,
 				A597B75B2531D080000578C5 /* HTTPTask.swift in Sources */,
 				A529FB99250CFAB8003AB128 /* AutorizeVC.swift in Sources */,

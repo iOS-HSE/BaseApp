@@ -18,10 +18,17 @@ class NewMoviesVC: GenericTableVC<NewMoviesCell, Movie> {
     }
     
     func fetch() {
-        NetworkManager.shared.getNewMovies(page: 0) { movies, _ in
-            self.dataSource = TableDataSource(models: movies ?? [], reuseID: "\(NewMoviesCell.self)")
-            self.tableView.dataSource = self.dataSource
-            self.tableView.reloadData()
+        showIndicator()
+        NetworkManager.shared.getNewMovies(page: 0) { movies, error in
+            DispatchQueue.main.async {
+                if error != nil {
+                    self.createAlert(message: error ?? "")
+                }
+                self.hideIndicator()
+                self.dataSource = TableDataSource(models: movies ?? [], reuseID: "\(NewMoviesCell.self)")
+                self.tableView.dataSource = self.dataSource
+                self.tableView.reloadData() 
+            }
         }
     }
     
