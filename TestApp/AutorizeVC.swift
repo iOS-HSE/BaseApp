@@ -102,7 +102,7 @@ class AutorizeVC: UIViewController {
     }
     
     @objc func enterMainScreen() {
-        guard let login = loginTextField.text, let pass = passTextField.text else { return } 
+        //guard let login = loginTextField.text, let pass = passTextField.text else { return } 
 //        navigationController?.pushViewController(MainVC(login: login, pass: pass), animated: true)
         navigationController?.pushViewController(NewListVC(), animated: true)
     }

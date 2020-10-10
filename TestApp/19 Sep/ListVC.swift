@@ -9,7 +9,9 @@
 import UIKit
 
 
-class ListVC: UIViewController {
+class ListVC: UIViewController, Loader {
+    
+    var indicator = UIActivityIndicatorView(style: .white)
     
     let names = ["Sam", "John", "Mike"]
     
@@ -19,6 +21,22 @@ class ListVC: UIViewController {
         return tbl
     }()
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -27,6 +45,10 @@ class ListVC: UIViewController {
         tableView.tableFooterView = UIView()
         setupUI()
         view.backgroundColor = UIColor.Palette.backgroundWhite
+        
+        view.layoutSubviews()
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {

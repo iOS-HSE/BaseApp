@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,12 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             let navigationVC = UINavigationController()
             window.rootViewController = navigationVC
             window.makeKeyAndVisible()
-            Navigator.shared.show(segue: .start, sender: navigationVC)
+            Navigator.shared.show(segue: .categories, sender: navigationVC)
         }
         
         return true

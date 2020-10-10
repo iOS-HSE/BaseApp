@@ -18,9 +18,6 @@ final class Navigator {
         case .start:
             let vc = AutorizeVC()
             show(target: vc, sender: sender)
-        case .categories:
-            let vc = CategoriesVC(style: .plain)
-            show(target: vc, sender: sender)
         @unknown default:
             break
         }
