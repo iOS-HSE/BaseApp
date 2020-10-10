@@ -18,6 +18,9 @@ final class Navigator {
         case .start:
             let vc = AutorizeVC()
             show(target: vc, sender: sender)
+        case .newMovies:
+            let vc = NewMoviesVC()
+            show(target: vc, sender: sender)
         @unknown default:
             break
         }

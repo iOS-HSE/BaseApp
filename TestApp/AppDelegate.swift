@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationVC = UINavigationController()
             window.rootViewController = navigationVC
             window.makeKeyAndVisible()
-            Navigator.shared.show(segue: .categories, sender: navigationVC)
+            Navigator.shared.show(segue: .newMovies, sender: navigationVC)
         }
         
         return true

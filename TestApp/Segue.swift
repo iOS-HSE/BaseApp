@@ -11,5 +11,5 @@ import Foundation
 
 enum Segue {
     case start
-    case categories
+    case newMovies
 }

@@ -27,7 +27,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     }
     
     func cancel() {
-        
+        self.task?.cancel()
     }
     
     fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest {
@@ -52,6 +52,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                                               let bodyEncoding,
                                               let urlParameters,
                                               let headers):
+                self.addAdditionalHeaders(headers, request: &request)
                 try self.configureParameters(bodyParameters: bodyParameter,
                                              bodyEncoding: bodyEncoding,
                                              urlParameters: urlParameters,
@@ -72,6 +73,13 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
             try bodyEncoding.encode(urlRequest: &request, bodyParameters: bodyParameters, urlParameters: urlParameters)
         } catch  {
             throw error
+        }
+    }
+    
+    fileprivate func addAdditionalHeaders(_ additionalHeaders: HTTPHeaders?, request: inout URLRequest) {
+        guard let headers = additionalHeaders else { return }
+        for (key, value) in headers {
+            request.setValue(value, forHTTPHeaderField: key)
         }
     }
 }
