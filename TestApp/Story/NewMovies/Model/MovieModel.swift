@@ -42,3 +42,13 @@ struct Movie: Codable {
         case overview
     }
 }
+
+//
+//- id : 528085
+//- posterPath : "/7D430eqZj8y3oVkLFfsWXGRcpEG.jpg"
+//- backdrop : "/5UkzNSOK561c2QRy2Zr4AkADzLT.jpg"
+//- title : "2067"
+//- releaseDate : "2020-10-01"
+//- rating : 5.7
+//- overview : "A lowly utility worker is called to the future by a mysterious radio signal, he must leave his dying wife to embark on a journey that will force him to face his deepest fears in an attempt to change the fabric of reality and save humankind from its greatest environmental crisis yet."
+//

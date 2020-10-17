@@ -20,13 +20,19 @@ public enum MovieAPI {
     case popular(page: Int)
     case newMovies(page: Int)
     case video(id: Int)
+    case imageLoad(url: String)
 }
 
 extension MovieAPI: EndPointType {
+    
+    static let url: String = "https://api.themoviedb.org/3/movie/"
+    
     var environmentBaseURL: String {
         switch NetworkManager.environment {
         case .prod:
-            return "https://api.themoviedb.org/3/movie/"
+            return Self.url
+        case .stage:
+            return ""
         default:
             return ""
         }
@@ -49,6 +55,8 @@ extension MovieAPI: EndPointType {
             return "now_playing"
         case .video(let id):
             return "\(id)/videos"
+        case .imageLoad(let url):
+            return "\(url)"
         }
     }
     
@@ -63,6 +71,9 @@ extension MovieAPI: EndPointType {
                                       bodyEncoding: .url,
                                       urlParameters: ["page": page,
                                                       "api_key": NetworkManager.MovieAPIKey])
+        case .imageLoad(_):
+            return .requestParameters(bodyParameters: nil, bodyEncoding: .url, urlParameters: ["api_key": NetworkManager.MovieAPIKey])
+            
         default:
             return .request
         }

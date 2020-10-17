@@ -8,7 +8,6 @@
 
 import Foundation
 
-import Foundation
 
 class NetworkLogger {
     static func log(request: URLRequest) {

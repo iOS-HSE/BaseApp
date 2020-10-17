@@ -9,7 +9,9 @@
 import UIKit
 
 
-class NewMoviesVC: GenericTableVC<NewMoviesCell, Movie> {
+class NewMoviesVC: GenericTableVC<NewMoviesCell, NewMoviesCellViewModel> {
+    
+    private let presenter = NewMoviesPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,8 @@ class NewMoviesVC: GenericTableVC<NewMoviesCell, Movie> {
                     self.createAlert(message: error ?? "")
                 }
                 self.hideIndicator()
-                self.dataSource = TableDataSource(models: movies ?? [], reuseID: "\(NewMoviesCell.self)")
+                let viewModel = self.presenter.viewModel(with: movies ?? [])
+                self.dataSource = TableDataSource(models: viewModel, reuseID: "\(NewMoviesCell.self)")
                 self.tableView.dataSource = self.dataSource
                 self.tableView.reloadData() 
             }

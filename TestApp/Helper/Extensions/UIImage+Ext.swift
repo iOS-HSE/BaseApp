@@ -11,12 +11,21 @@ import UIKit
 
 extension UIImageView {
     
-    func load(url: String?) {
-//        let urlStr = URL(string:url ?? "")
-//        let image = UIImage(contentsOfFile: <#T##String#>)
-//        DispatchQueue.main.async {
-//            self.image = image
-//        }
+    func load(url: String) {
+        guard let url = URL(string: url) else { return }
+        let urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("Error loading image, description: \(error)")
+                    self.image = UIImage(named: "hse")
+                }
+                guard let data = data else { return }
+                self.image = UIImage(data: data)
+            }
+        }
+        task.resume()
     }
     
 }
